@@ -1,6 +1,6 @@
 {
     "name": "liip/symfony-rad-edition",
-    "license": "MIT",
+    "license": "proprietary",
     "type": "project",
     "description": "Liip \"Rapid-Application-Development\" edition of Symfony",
     "homepage": "https://github.com/liip/symfony-rad-edition",
