@@ -1,36 +1,10 @@
-# Run apt-get update to create the stamp file
-execute "apt-get-update" do
-  command "apt-get update"
-  ignore_failure true
-  not_if do ::File.exists?('/var/lib/apt/periodic/update-success-stamp') end
-end
-
-# For other recipes to call to force an update
-execute "apt-get update" do
-  command "apt-get update"
-  ignore_failure true
-  action :nothing
-end
-
-# provides /var/lib/apt/periodic/update-success-stamp on apt-get update
-package "update-notifier-common" do
-  notifies :run, resources(:execute => "apt-get-update"), :immediately
-end
-
-execute "apt-get-update-periodic" do
-  command "apt-get update"
-  ignore_failure true
-  only_if do
-    File.exists?('/var/lib/apt/periodic/update-success-stamp') &&
-      File.mtime('/var/lib/apt/periodic/update-success-stamp') < Time.now - 86400
-  end
-end
+execute "apt-get update"
 
 package "python-software-properties"
 
 execute "add php 5.4 repository" do
   not_if "grep ondrej /etc/apt/sources.list.d/*"
-  command "add-apt-repository ppa:ondrej/php5"
+  command "add-apt-repository ppa:ondrej/php5 && apt-get update"
 end
 
 # install the software we need
@@ -78,13 +52,6 @@ execute "date.timezone = UTC in php.ini?" do
  command "echo -e '\ndate.timezone = UTC\n' >> /etc/php5/cli/php.ini"
 end
 
-template "/etc/apache2/sites-enabled/elasticsearch-head.conf" do
-  user "root"
-  mode "0644"
-  source "elasticsearch-head.conf.erb"
-  notifies :reload, "service[apache2]"
-end
-
 bash "install phpunit " do
   not_if "which phpunit"
   user "root"
@@ -95,8 +62,31 @@ bash "install phpunit " do
       EOH
 end
 
-execute "re-run composer to get the post-install things right" do
-    user "vagrant"
-    cwd "/vagrant"
-    command "php composer.phar install --dev --prefer-source"
+bash "retrieve composer" do
+  user "vagrant"
+  cwd "/vagrant"
+  code <<-EOH
+  set -e
+
+  # create bin folder
+  mkdir -p bin
+
+  # check if composer is installed
+  if [ ! -f bin/composer.phar ]
+  then
+    curl -s https://getcomposer.org/installer | php -- --install-dir=bin
+  else
+    php bin/composer.phar selfupdate
+  fi
+  EOH
+end
+
+bash "run composer" do
+  user "vagrant"
+  cwd "/vagrant"
+  code <<-EOH
+  set -e
+  export COMPOSER_HOME=/home/vagrant
+  bin/composer.phar install --dev
+  EOH
 end
