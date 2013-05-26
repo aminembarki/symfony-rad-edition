@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Knp\RadBundle\KnpRadBundle(),
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new App\App(),
         );
 

@@ -1,8 +1,14 @@
-{% extends '::base.html.twig' %}
+{% extends 'MopaBootstrapBundle::base_css.html.twig' %}
 
 {% block headers %}
     <title>{% block title %}{% block subtitle '' %} &mdash; KnpRadBundle{% endblock %}</title>
     <meta name="description" content="{% block description '' %}">
+    {% stylesheets filter='less,cssrewrite,?yui_css'
+    '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
+    '@YourNiceBundle/Resources/public/less/*'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
 {% endblock headers %}
 
 {% block body %}
