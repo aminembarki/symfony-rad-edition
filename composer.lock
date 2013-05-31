@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "cf5b5ed47f9558888d4044b8ca0c5d6e",
+    "hash": "53e268679f29e68bfa76cf9a5e332592",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -206,16 +206,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "2.4.0-RC2",
+            "version": "2.4.0-RC3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "2.4.0-RC2"
+                "reference": "2.4.0-RC3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/2.4.0-RC2",
-                "reference": "2.4.0-RC2",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/2.4.0-RC3",
+                "reference": "2.4.0-RC3",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -276,7 +276,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-05-09 21:35:24"
+            "time": "2013-05-27 19:11:46"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -856,17 +856,17 @@
         },
         {
             "name": "knplabs/rad-bundle",
-            "version": "2.3.x-dev",
+            "version": "dev-develop",
             "target-dir": "Knp/RadBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpRadBundle.git",
-                "reference": "d737f2c322024b7b760047c36f9cfdd19a0e50fe"
+                "reference": "95227b63a4b3b63ac1161e711303c3ad6f593a96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpRadBundle/zipball/d737f2c322024b7b760047c36f9cfdd19a0e50fe",
-                "reference": "d737f2c322024b7b760047c36f9cfdd19a0e50fe",
+                "url": "https://api.github.com/repos/KnpLabs/KnpRadBundle/zipball/95227b63a4b3b63ac1161e711303c3ad6f593a96",
+                "reference": "95227b63a4b3b63ac1161e711303c3ad6f593a96",
                 "shasum": ""
             },
             "require": {
@@ -907,7 +907,7 @@
             ],
             "description": "The \"KnpLabs Rad Edition\" bundle",
             "homepage": "http://rad.knplabs.com",
-            "time": "2013-05-25 09:19:58"
+            "time": "2013-05-31 11:05:17"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -981,6 +981,47 @@
             "time": "2013-05-16 05:28:39"
         },
         {
+            "name": "leafo/lessphp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/lessphp.git",
+                "reference": "ff86f2941c3f3d67d56acad2f8902ca57c73b359"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leafo/lessphp/zipball/ff86f2941c3f3d67d56acad2f8902ca57c73b359",
+                "reference": "ff86f2941c3f3d67d56acad2f8902ca57c73b359",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "lessphp is a compiler for LESS written in PHP.",
+            "homepage": "http://leafo.net/lessphp/",
+            "time": "2013-05-22 17:52:29"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.5.0",
             "source": {
@@ -1049,12 +1090,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phiamo/MopaBootstrapBundle.git",
-                "reference": "800fbb4b252d47520bd647087c925b29f71ef704"
+                "reference": "5a8c39dfd5c15395f99d9d26037c66178c42bd36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phiamo/MopaBootstrapBundle/zipball/800fbb4b252d47520bd647087c925b29f71ef704",
-                "reference": "800fbb4b252d47520bd647087c925b29f71ef704",
+                "url": "https://api.github.com/repos/phiamo/MopaBootstrapBundle/zipball/5a8c39dfd5c15395f99d9d26037c66178c42bd36",
+                "reference": "5a8c39dfd5c15395f99d9d26037c66178c42bd36",
                 "shasum": ""
             },
             "require": {
@@ -1103,7 +1144,7 @@
                 "form",
                 "template"
             ],
-            "time": "2013-05-25 16:04:28"
+            "time": "2013-05-29 08:25:57"
         },
         {
             "name": "mopa/composer-bridge",
@@ -1854,7 +1895,8 @@
         "mopa/bootstrap-bundle": 20,
         "twitter/bootstrap": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
-        "doctrine/data-fixtures": 20
+        "doctrine/data-fixtures": 20,
+        "leafo/lessphp": 20
     },
     "platform": {
         "php": ">=5.3.3"
