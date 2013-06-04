@@ -49,6 +49,10 @@ set :use_sudo,          false
 set :model_manager,     "doctrine"
 
 #
+# Run database migrations, if any
+# before "symfony:cache:warmup", "symfony:doctrine:migrations:migrate"
+
+#
 # Set files that should be shared between releases
 set :shared_files,      ["app/config/parameters.yml"]
 
