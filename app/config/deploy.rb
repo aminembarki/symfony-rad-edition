@@ -32,12 +32,12 @@ set :repository,        "https://github.com/liip/symfony-rad-edition.git"
 
 #
 # Don't use sudo when deploying
-# set :use_sudo, false
+# set :use_sudo,         false
 
 #
 # Use a different user to connect via SSH
 # If this is commented then your current user will be used
-# set :user, "deployer"
+# set :user,             "deployer"
 
 
 #
@@ -48,6 +48,11 @@ set :model_manager,     "doctrine"
 #
 # Set files that should be shared between releases
 set :shared_files,      ["app/config/parameters.yml"]
+
+#
+# The logs and the /web/uploads folder are shared by default.
+# Adjust the shared_children variable if you want to share additional folders
+# set :shared_children,  [log_path, web_path + "/uploads"]
 
 #
 # Get more verbose output - helpful when debugging
@@ -61,15 +66,15 @@ set :shared_files,      ["app/config/parameters.yml"]
 # The settings below usually don't need to be changed
 #
 
+set :dump_assetic_assets, true
+set :use_composer,        true
+set :app_path,            "app"
 
-set :use_composer,      true
-set :app_path,          "app"
+role :web,                domain                         # Your HTTP server, Apache/etc
+role :app,                domain                         # This may be the same as your `Web` server
+role :db,                 domain, :primary => true       # This is where Symfony2 migrations will run
 
-role :web,              domain                         # Your HTTP server, Apache/etc
-role :app,              domain                         # This may be the same as your `Web` server
-role :db,               domain, :primary => true       # This is where Symfony2 migrations will run
+set  :keep_releases,      3
 
-set  :keep_releases,    3
-
-set :scm,               :git
+set :scm,                 :git
 # Or `accurev`, `bzr`, `cvs`, `darcs`, `subversion`, `mercurial`, `perforce`, or `none`
