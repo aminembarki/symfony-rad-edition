@@ -29,15 +29,18 @@ set :repository,        "https://github.com/liip/symfony-rad-edition.git"
 # You may need to uncomment the setting first.
 #
 
+#
+# Set the branch that should be deployed
+set :branch,            "develop"
 
 #
 # Don't use sudo when deploying
-# set :use_sudo,         false
+set :use_sudo,          false
 
 #
 # Use a different user to connect via SSH
 # If this is commented then your current user will be used
-# set :user,             "deployer"
+# set :user,              "deployer"
 
 
 #
@@ -52,7 +55,7 @@ set :shared_files,      ["app/config/parameters.yml"]
 #
 # The logs and the /web/uploads folder are shared by default.
 # Adjust the shared_children variable if you want to share additional folders
-# set :shared_children,  [log_path, web_path + "/uploads"]
+# set :shared_children,   [log_path, web_path + "/uploads"]
 
 #
 # Get more verbose output - helpful when debugging
