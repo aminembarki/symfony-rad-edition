@@ -7,15 +7,6 @@
 set :application,       "set your application name here"
 
 #
-# Set the domain your application will run on.
-# The SSH connection will happen through this domain (ssh example.com)
-set :domain,            "example.com"
-
-#
-# Set the absolute path the application should be deployed to on your server
-set :deploy_to,         "/var/www/your-site"
-
-#
 # Set the URL to your git repository.
 # Your server will need to be able to check out from here.
 set :repository,        "https://github.com/liip/symfony-rad-edition.git"
@@ -28,10 +19,6 @@ set :repository,        "https://github.com/liip/symfony-rad-edition.git"
 # The settings below can be adjusted to your server setup.
 # You may need to uncomment the setting first.
 #
-
-#
-# Set the branch that should be deployed
-set :branch,            "develop"
 
 #
 # Don't use sudo when deploying
@@ -73,15 +60,18 @@ set :shared_files,      ["app/config/parameters.yml"]
 # The settings below usually don't need to be changed
 #
 
+set :stages,         %w(production staging)
+set :default_stage,  "staging"
+set :stage_dir,      "app/config/capifony"
+require 'capistrano/ext/multistage'
+
 set :dump_assetic_assets, true
 set :use_composer,        true
 set :app_path,            "app"
-
-role :web,                domain                         # Your HTTP server, Apache/etc
-role :app,                domain                         # This may be the same as your `Web` server
-role :db,                 domain, :primary => true       # This is where Symfony2 migrations will run
 
 set  :keep_releases,      3
 
 set :scm,                 :git
 # Or `accurev`, `bzr`, `cvs`, `darcs`, `subversion`, `mercurial`, `perforce`, or `none`
+
+load 'app/config/capifony/tasks.rb'
