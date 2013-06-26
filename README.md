@@ -5,6 +5,19 @@ This is the Symfony RAD (Rapid Application Development) Edition by [Liip](http:/
 It's goal is to have an optimized setup including all the bundles we use regularly and making easy to add less-used but
 recurring functionality.
 
+Definition of Done
+------------------------
+
+- Follow Symfony2, PSR-1/PSR-2 conventions
+- Unit testing for algorithms, functional testing for the output format
+- New features should be developed in feature branches
+- Changes are proposed via pull requests:
+  - PRs include unit/functional tests, markdown docs
+  - PRs should be opened as early as possible, but marked as "work in progress" via a [WIP] prefix in the PR title
+  - if a PR is ready for review, the given developer should find someone else to review
+  - if possible developers should try to get different people to review their PRs
+- PHPDoc should be added to methods, short description to classes, more detailed instructions are put in markdown files in `doc/`
+
 
 Deployment with Capifony
 ------------------------
