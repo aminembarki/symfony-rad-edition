@@ -1,8 +1,15 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "liip/symfony-rad-edition",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Liip \"Rapid-Application-Development\" edition of Symfony",
+    "homepage": "https://github.com/liip/symfony-rad-edition",
+    "authors": [
+        {
+            "name": "Liip AG",
+            "homepage": "http://www.liip.ch"
+        }
+    ],
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -36,15 +43,12 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "RC",
+    "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.3-dev"
         }
     }
 }
