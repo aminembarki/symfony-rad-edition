@@ -5,6 +5,12 @@ This is the Symfony RAD (Rapid Application Development) Edition by [Liip](http:/
 It's goal is to have an optimized setup including all the bundles we use regularly and making easy to add less-used but
 recurring functionality.
 
+The Symfony Liip RAD Edition includes
+
+* The [Guzzle Bundle](https://github.com/misd-service-development/guzzle-bundle), an HTTP client
+* [Doctrine Migrations](https://github.com/doctrine/DoctrineMigrationsBundle)
+
+
 Definition of Done
 ------------------------
 
