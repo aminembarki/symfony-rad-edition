@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html
+        version="HTML+RDFa 1.0"
+        xmlns:sioc="http://rdfs.org/sioc/ns#"
+        xmlns:dcterms="http://purl.org/dc/terms/">
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome to the REST Demo!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    <h1>REST Demo</h1>
+
+    {% block content %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+</body>
+</html>

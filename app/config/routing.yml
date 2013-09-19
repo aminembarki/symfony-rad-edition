@@ -1,3 +1,8 @@
 nelmio_api_doc:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+
+rest_demo:
+    resource: "@AcmeRestBundle/Controller/RestController.php"
+    type: rest
+    prefix:   /api/rest
