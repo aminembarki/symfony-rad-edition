@@ -9,3 +9,7 @@ php:
 before_script: composer update --prefer-source
 
 script: phpunit -c app
+
+branches:
+  only:
+    - /^.+-EXAMPLE$/
