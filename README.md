@@ -11,18 +11,45 @@ The Symfony Liip RAD Edition includes
 * [Doctrine Migrations](https://github.com/doctrine/DoctrineMigrationsBundle)
 
 
+Coding Standards
+------------------------
+
+As this is a symfony project, it is recommended to also follow the core [symfony coding standards](http://symfony.com/doc/current/contributing/code/standards.html) here as well.
+
+
+Development Workflow
+------------------------
+
+- Changes (new features and fixes) should be developed in branches
+- These changes are proposed via pull requests
+- PRs should be opened as early as possible, but marked as "work in progress" via a [WIP] prefix in the PR title
+- If a PR is ready, the developer
+  - is resposible that the PR is mergeable (no conflicts),
+  - should remove the [WIP],
+  - find someone else to review (should not always be the same, if possible)
+
+
 Definition of Done
 ------------------------
 
-- Follow Symfony2, PSR-1/PSR-2 conventions
-- Unit testing for algorithms, functional testing for the output format
-- New features should be developed in feature branches
-- Changes are proposed via pull requests:
-  - PRs include unit/functional tests, markdown docs
-  - PRs should be opened as early as possible, but marked as "work in progress" via a [WIP] prefix in the PR title
-  - if a PR is ready for review, the given developer should find someone else to review
-  - if possible developers should try to get different people to review their PRs
-- PHPDoc should be added to methods, short description to classes, more detailed instructions are put in markdown files in `doc/`
+- You are happy with the code you produced and further refactoring is not needed at this moment
+- The changes are reviewed by another developer (or produced with pair programming)
+- Coding Standards are followed
+- Unit/functional tests written and passing
+- Documentation in form of PHPDocs for methods and classes
+- Relevant documentation/diagrams produced and/or updated (e.g. markdown files)
+- Any build/deployment/configuration changes are implemented/documented/communicated
+- Merged into master branch by reviewer
+- The change is deployed to a staging server
+- Task in issue tracker is task resolved
+
+
+Installation
+------------------------
+- Clone the repository
+- Run `vagrant up`
+- Wait for the script to finish, then go to ... and see if it works
+- ...
 
 
 Deployment with Capifony
