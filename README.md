@@ -24,7 +24,7 @@ Development Workflow
 - These changes are proposed via pull requests
 - PRs should be opened as early as possible, but marked as "work in progress" via a [WIP] prefix in the PR title
 - If a PR is ready, the developer
-  - is resposible that the PR is mergeable (no conflicts),
+  - is responsible that the PR is mergeable (no conflicts),
   - should remove the [WIP],
   - find someone else to review (should not always be the same, if possible)
 
